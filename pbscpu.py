@@ -63,8 +63,12 @@ def main():
     nptotq = countcpu('quiet')
     nptotusef = countppn('furious')
     nptotuseq = countppn('quiet')
+    nptots = countcpu('simulation')
+    nptotuses = countppn('simulation')
+
     print "CPU cluster usage :"
     print "Quiet : [ %s / %s ]" % (nptotuseq,nptotq)
     print "Furious : [ %s / %s ]" % (nptotusef,nptotf)
+    print "Simulation : [ %s / %s ]" % (nptotuses,nptots)
 
 main()
