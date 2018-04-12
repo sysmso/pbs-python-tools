@@ -1,6 +1,8 @@
-To test these utilities set the environment variabele PYTHONPATH:
-for sh-shells:
-    PYTHONPATH=../src; export PYTHONPATH
+# PBS Tools in Python
 
-for csh-shells:
-    setenv PYTHONPATH ../src
+These tools are based upon PBSQuery (https://oss.trac.surfsara.nl/pbs_python). They are made for PBS Torque.
+
+## pbscpu.py 
+
+This tool show CPU availables in every queue. 
+
