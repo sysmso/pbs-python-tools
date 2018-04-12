@@ -20,8 +20,11 @@ def main():
 
     for id in jobs:
         try:
-            np = jobs[id].Resource_List.nodes
-            print np[0]
+            np = jobs[id].Resource_List.mem
+            nd = jobs[id].Resource_List.nodect
+            nom = jobs[id].exec_host
+            queue = jobs[id].queue
+            print nom,np,nd,queue
         except PBSError, detail:
             print detail
         pass

@@ -49,7 +49,7 @@ def countppn(queue):
     return nptot
 
 def main():
-    print "CPU memory usage in Gb [ reserved / available ] : "
+    print "Queue memory usage in Gb [ reserved / available ] : "
     p = PBSQuery()
     queues = p.getqueues()
     for queue in queues.keys():

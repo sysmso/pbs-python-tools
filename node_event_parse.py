@@ -17,5 +17,5 @@ import sys
 from PBSQuery import PBSQuery
 
 p = PBSQuery()
-node = p.getnode('apccl02')
+node = p.getnode('apccl02.in2p3.fr')
 print node['event']
