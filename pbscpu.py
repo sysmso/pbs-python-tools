@@ -65,10 +65,6 @@ def main():
     for queue in queues.keys():
         np = countcpu(queue)
         npp = countppn(queue)
-        print "%s : [%s / %s ] " % (queue,np,npp)
-
-    #print "Quiet : [ %s / %s ]" % (nptotuseq,nptotq)
-    #print "Furious : [ %s / %s ]" % (nptotusef,nptotf)
-    #print "Simulation : [ %s / %s ]" % (nptotuses,nptots)
+        print "%s : [ %s / %s ] " % (queue,npp,np)
 
 main()
