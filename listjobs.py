@@ -22,9 +22,11 @@ def main():
         try:
             np = jobs[id].Resource_List.mem
             nd = jobs[id].Resource_List.nodect
+            nn = jobs[id].Resource_List
             nom = jobs[id].exec_host
             queue = jobs[id].queue
-            print nom,np,nd,queue
+            #print nom,np,nd,queue,nn
+            print nn
         except PBSError, detail:
             print detail
         pass
