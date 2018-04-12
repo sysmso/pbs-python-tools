@@ -59,16 +59,22 @@ def countppn(queue):
     return nptot
 
 def main():
-    nptotf = countcpu('furious') 
-    nptotq = countcpu('quiet')
-    nptotusef = countppn('furious')
-    nptotuseq = countppn('quiet')
-    nptots = countcpu('simulation')
-    nptotuses = countppn('simulation')
+    p = PBSQuery()
+    queues = p.getqueues()
+    for queue in queues.keys():
+        print queue
+        np = countcpu(queue)
+        print np
+    #nptotf = countcpu('furious') 
+    #nptotq = countcpu('quiet')
+    #nptotusef = countppn('furious')
+    #nptotuseq = countppn('quiet')
+    #nptots = countcpu('simulation')
+    #nptotuses = countppn('simulation')
 
-    print "CPU cluster usage :"
-    print "Quiet : [ %s / %s ]" % (nptotuseq,nptotq)
-    print "Furious : [ %s / %s ]" % (nptotusef,nptotf)
-    print "Simulation : [ %s / %s ]" % (nptotuses,nptots)
+    #print "CPU cluster usage :"
+    #print "Quiet : [ %s / %s ]" % (nptotuseq,nptotq)
+    #print "Furious : [ %s / %s ]" % (nptotusef,nptotf)
+    #print "Simulation : [ %s / %s ]" % (nptotuses,nptots)
 
 main()
