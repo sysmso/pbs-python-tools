@@ -31,15 +31,16 @@ def main():
             memory = memory[:-2]
             memory = int(memory)
             memory = memory/1000000
+	    load = nodes[id].status.loadave[0]
             if hasattr(nodes[id],"jobs"):
                 jobs = nodes[id].jobs
             else :
                 jobs = "none"
-            l.append([name,state,power,queue,np,memory,jobs])
+            l.append([name,state,power,queue,np,memory,load,jobs])
         except PBSError, detail:
             print detail
         pass
     l.sort()
-    print tabulate(l, headers=["Node","State", "Power state", "Queue", "CPU", "MEM", "jobs"], tablefmt="rst")
+    print tabulate(l, headers=["Node","State", "Power state", "Queue", "CPU", "MEM", "Load", "jobs"], tablefmt="rst")
     
 main()
