@@ -34,9 +34,12 @@ def main():
 	    load = nodes[id].status.loadave[0]
             if hasattr(nodes[id],"jobs"):
                 jobs = nodes[id].jobs
+                result = str()
+                s = ", ";
+                result = s.join(jobs)
             else :
-                jobs = "none"
-            l.append([name,state,power,queue,np,memory,load,jobs])
+                result = "none"
+            l.append([name,state,power,queue,np,memory,load,result])
         except PBSError, detail:
             print detail
         pass
