@@ -31,15 +31,19 @@ def main():
             memory = memory[:-2]
             memory = int(memory)
             memory = memory/1000000
-	    load = nodes[id].status.loadave[0]
+            load = nodes[id].status.loadave[0]
+            display = " "
             if hasattr(nodes[id],"jobs"):
                 jobs = nodes[id].jobs
-                result = str()
-                s = ", ";
-                result = s.join(jobs)
-            else :
-                result = "none"
-            l.append([name,state,power,queue,np,memory,load,result])
+                results = len(jobs)
+                for result in range(results):
+                    display += "x"
+                #result = str()
+                #s = ", "
+                #result = s.join(jobs)
+            else:
+                display = "0"
+            l.append([name,state,power,queue,np,memory,load,display])
         except PBSError, detail:
             print detail
         pass
